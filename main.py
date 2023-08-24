@@ -3,7 +3,7 @@ from snake import Snake
 import time
 import random
 
-#screen configuration
+
 screen = Screen()
 screen.bgpic("assets/map.png")
 screen.setup(width=810, height=810)
