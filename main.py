@@ -5,8 +5,8 @@ import random
 
 #screen configuration
 screen = Screen()
-screen.bgcolor("black")
-screen.setup(width=600, height=600)
+screen.bgpic("assets/map.png")
+screen.setup(width=810, height=810)
 screen.title("Python Snake")
 screen.tracer(0)
 
