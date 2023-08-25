@@ -1,16 +1,18 @@
-from turtle import Screen, Turtle
+from turtle import Screen
 from snake import Snake
+from food import Food
 import time
-import random
+
 
 
 screen = Screen()
 screen.bgpic("assets/map.png")
-screen.setup(width=810, height=810)
+screen.setup(width=410, height=410)
 screen.title("Python Snake")
 screen.tracer(0)
 
 snake = Snake()
+food = Food()
 
 screen.listen()
 
@@ -25,8 +27,10 @@ while game_is_on:
     time.sleep(0.1)
 
     snake.move()
-
-
+ 
+    if snake.head.distance(food) < 15:
+        food.refresh()
+        snake.extend()
 
 
 screen.exitonclick()
