@@ -6,13 +6,13 @@ class Scoreboard(Turtle):
         self.penup()
         self.hideturtle()
         self.goto(0, 180)
-        self.color("white")
+        self.color("orange")
         self.score = 0
 
     def update(self):
         self.clear()
         self.goto(0, 180)
-        self.write(f"Score = {self.score}", False, "center")
+        self.write(f"Score = {self.score}", False, "center", ("Arial", 14, "normal"))
         
     def increase_score(self):
         self.score += 1

@@ -18,7 +18,7 @@ class Snake:
         for position in STARTING_POSITIONS:
             new_segment = Turtle("square")
             new_segment.penup()
-            new_segment.color("White")
+            new_segment.color("teal")
             new_segment.goto(position)
             self.segments.append(new_segment)
     
@@ -32,7 +32,7 @@ class Snake:
     def extend(self):
         new_segment = Turtle("square")
         new_segment.penup()
-        new_segment.color("White")
+        new_segment.color("teal")
         new_segment.goto(self.segments[-1].xcor(), self.segments[-1].ycor())
         self.segments.append(new_segment)
     
