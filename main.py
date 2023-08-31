@@ -5,7 +5,6 @@ from scoreboard import Scoreboard
 import time
 
 
-
 screen = Screen()
 screen.bgpic("assets/map.png")
 screen.setup(width=410, height=408)
@@ -30,17 +29,25 @@ while game_is_on:
     time.sleep(0.1)
 
     snake.move()
- 
+    
+    #Detect colision with food
     if snake.head.distance(food) < 15:
         food.refresh()
         snake.extend()
         scoreboard.increase_score()
     
-    if snake.head.xcor() > 190 or snake.head.xcor() < -190:
-        game_is_on = False
+    #Detect colision with wall
+    if snake.head.xcor() > 190 or snake.head.xcor() < -200:
         scoreboard.gameover()
+        snake.reset()
     if snake.head.ycor() > 190 or snake.head.ycor() < -190:
-        game_is_on = False
         scoreboard.gameover()
+        snake.reset()
+
+    #Detect colision with tail 
+    for segment in snake.segments[1:]:
+        if snake.head.distance(segment) < 10:
+            scoreboard.gameover()
+            snake.reset()
 
 screen.exitonclick()
