@@ -23,6 +23,7 @@ screen.onkeypress(snake.down, "Down")
 screen.onkeypress(snake.left, "Left")
 screen.onkeypress(snake.right, "Right")
 
+#Game loop and screen tick
 game_is_on = True
 while game_is_on:
     screen.update()
